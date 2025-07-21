@@ -10,6 +10,7 @@ import roomRoutes from "./routes/roomRoutes";
 import userRoutes from "./routes/userRoutes";
 import authRoutes from "./routes/authRouter";
 import meetRoutes from "./routes/meetRoute";
+import environmentRoutes from "./routes/enronmentRoute";
 import "reflect-metadata";
 import { AppDataSource } from "./config/dataSource";
 import { DB_PASSWORD, CLIENT_URL as FRONTENDURL } from "./config/env";
@@ -21,12 +22,12 @@ AppDataSource.initialize().then(() => {
 });
 
 // Environment variables
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 5000;
 const CLIENT_URL = FRONTENDURL || "http://localhost:3000";
 
 // CORS configuration
 const corsOptions = {
-  origin: [CLIENT_URL, "http://localhost:3000", "http://localhost:3001"],
+  origin: [CLIENT_URL, "http://localhost:3000", "https://coinconnect-call.vercel.app"],
   credentials: true,
   optionsSuccessStatus: 200,
 };
@@ -70,6 +71,7 @@ app.use("/api/rooms", roomRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/auth", authRoutes);
 app.use("/api/meet", meetRoutes);
+app.use("/api/environment", environmentRoutes);
 
 // Health check endpoint
 app.get("/api/health", (req, res) => {

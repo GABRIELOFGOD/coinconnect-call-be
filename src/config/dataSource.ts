@@ -9,7 +9,7 @@ export const AppDataSource = new DataSource({
   type: "mysql",
   host: "localhost",
   username: "root",
-  password: "",
+  password: "xoHuC5UrEcrlS05ch#",
   database: "videocall",
   entities: [Meeting, User, Environment],
   synchronize: true,

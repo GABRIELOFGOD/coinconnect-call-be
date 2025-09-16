@@ -27,7 +27,7 @@ const CLIENT_URL = FRONTENDURL || "http://localhost:3000";
 
 // CORS configuration
 const corsOptions = {
-  origin: [CLIENT_URL, "http://localhost:3000", "https://coinconnect-call.vercel.app"],
+  origin: [CLIENT_URL, "http://localhost:3000", "https://telemeet.space"],
   credentials: true,
   optionsSuccessStatus: 200,
 };
